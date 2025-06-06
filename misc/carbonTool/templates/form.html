@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>Carbon Emission Calculator</title>
+</head>
+<body>
+    <h1>Calculate Carbon Emission</h1>
+    <form method="post">
+        <label>Manufacturer:</label>
+        <select name="manufacturer">
+            {% for m in manufacturers %}
+            <option value="{{ m['manufacturer'] }}">{{ m['manufacturer'] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Part Name:</label>
+        <input type="text" name="part_name"><br><br>
+
+        <label>Serial ID:</label>
+        <input type="text" name="serial_id"><br><br>
+
+        <label>Equipment Type:</label>
+        <select name="equipment_type">
+            <option value="New">New</option>
+            <option value="Old">Old</option>
+        </select><br><br>
+
+        <label>Logistics Type:</label>
+        <select name="logistics_type">
+            {% for lt in logistics_types %}
+            <option value="{{ lt }}">{{ lt }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Pickup Location:</label>
+        <input type="text" name="pickup" placeholder="e.g., Sydney"><br><br>
+
+        <label>Delivery Location:</label>
+        <input type="text" name="delivery" placeholder="e.g., Brisbane"><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

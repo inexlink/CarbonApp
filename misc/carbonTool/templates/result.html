@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>Emission Result</title>
+</head>
+<body>
+    <h1>Emission Calculation Result</h1>
+
+    <p><b>Final Emission:</b> {{ final_emission }} kg CO₂</p>
+    <p><b>Distance:</b> {{ logistics_info['distance'] }} km</p>
+
+    {% if logistics_info['duration_inland'] %}
+    <p><b>Inland Travel Time:</b> {{ logistics_info['duration_inland'] }} hours</p>
+    {% endif %}
+
+    <h2>Route Map</h2>
+    <div>
+        {{ map_html|safe }}
+    </div>
+
+    <h2>Global vs Local Emission Share</h2>
+    <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart">
+
+    <br><a href="{{ url_for('form') }}">Back to Form</a>
+</body>
+</html>

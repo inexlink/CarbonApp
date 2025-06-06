@@ -1,0 +1,6 @@
+flask
+pandas
+folium
+matplotlib
+geopy
+requests
