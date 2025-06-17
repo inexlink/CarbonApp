@@ -47,6 +47,7 @@ pip install -r requirements.txt
 
 1. Install Node.js dependencies:
 ```bash
+# change directory to /frontend and run 
 npm install
 ```
 
